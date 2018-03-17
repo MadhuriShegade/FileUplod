@@ -10,19 +10,19 @@ html
       }
 
       .container {
-        display: grid
-        grid-template-columns: repeat(#{column}, 1fr),
-        grid-template-rows: repeat(#{row}, 1fr)
+        display: grid;
+        grid-template-columns: repeat(#{column}, 1fr);       
+          grid-auto-rows: 200px;
       }
 
       .grid-item {
-        background: darkblue;
+        background: yellow;
       }
 
   body
     .container
-    - let totalGridItemsCount  = column * row;
+      - let totalGridItemsCount  = column * row;
     
-      while totalGridItemsCount > 0
-        - totalGridItemsCount=totalGridItemsCount-1;
-        .grid-item=#{totalGridItemsCount}
+        while totalGridItemsCount > 0
+          - totalGridItemsCount=totalGridItemsCount-1;
+          .grid-item #{totalGridItemsCount}
